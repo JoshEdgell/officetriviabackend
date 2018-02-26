@@ -31,6 +31,23 @@ router.put('/check/:id', (req,res)=>{
   })
 });
 
+router.put('/flag/:id', (req,res)=>{
+  // console.log(req.body.flagText);
+  Questions.findById(req.params.id, (err,foundQuestion)=>{
+    foundQuestion.flags.push(req.body.flagText);
+    foundQuestion.flagNumber += 1;
+    Questions.findByIdAndUpdate(req.params.id, foundQuestion, {new:true}, (err,updatedQuestion)=>{
+      res.json(updatedQuestion);
+    })
+  })
+})
+
+router.get('/:id', (req,res)=>{
+  Questions.findById(req.params.id, (err,foundQuestion)=>{
+    res.send(foundQuestion);
+  })
+})
+
 //Delete questions route
 router.delete('/:id', (req,res)=>{
   Questions.findByIdAndRemove(req.params.id, (err,deletedQuestion)=>{
