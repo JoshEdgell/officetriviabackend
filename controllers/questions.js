@@ -31,8 +31,8 @@ router.put('/check/:id', (req,res)=>{
   })
 });
 
+//This route will flag a question for review by admin.  It receives "flagText" from the body of the request, increments the flagNumber of the question and pushes the flagText into the flags array of the question 
 router.put('/flag/:id', (req,res)=>{
-  // console.log(req.body.flagText);
   Questions.findById(req.params.id, (err,foundQuestion)=>{
     foundQuestion.flags.push(req.body.flagText);
     foundQuestion.flagNumber += 1;
