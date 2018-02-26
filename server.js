@@ -1,7 +1,10 @@
 const express           = require('express');
 const mongoose          = require('mongoose');
+const bodyParser        = require('body-parser');
 const app               = express();
 const PORT              = 12345;
+
+app.use(bodyParser.json());
 
 const questionsController = require('./controllers/questions.js');
 app.use('/questions', questionsController);
