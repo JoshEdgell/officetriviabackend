@@ -15,16 +15,15 @@ router.get('/', (req,res)=>{
 
 //This route is used to check an answer.  It takes in an object with a single key-value pair {guess:choice} to check against the 'correct' key of the found question
 router.put('/check/:id', (req,res)=>{
-  // console.log(req.body.guess);
-  let correct = false;
   Questions.findById(req.params.id, (err,foundQuestion)=>{
-    // console.log(foundQuestion.correct);
     if (req.body.guess === foundQuestion.correct) {
-      correct = true;
+      console.log('correct');
+      res.send('correct');
+    } else {
+      console.log('incorrect');
+      res.send('incorrect');
     }
-    console.log(correct);
   })
-  res.send('received');
 })
 
 router.post('/', (req,res)=>{
