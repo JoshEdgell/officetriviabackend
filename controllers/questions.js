@@ -13,23 +13,29 @@ router.get('/', (req,res)=>{
   })
 });
 
-//This route is used to check an answer.  It takes in an object with a single key-value pair {guess:choice} to check against the 'correct' key of the found question
-router.put('/check/:id', (req,res)=>{
-  Questions.findById(req.params.id, (err,foundQuestion)=>{
-    if (req.body.guess === foundQuestion.correct) {
-      console.log('correct');
-      res.send('correct');
-    } else {
-      console.log('incorrect');
-      res.send('incorrect');
-    }
-  })
-})
-
+//Create questions route
 router.post('/', (req,res)=>{
   Questions.create(req.body, (err, createdQuestion)=>{
     res.json(createdQuestion);
   })
 });
+
+//This route is used to check an answer.  It takes in an object with a single key-value pair {guess:choice} to check against the 'correct' key of the found question
+router.put('/check/:id', (req,res)=>{
+  Questions.findById(req.params.id, (err,foundQuestion)=>{
+    if (req.body.guess === foundQuestion.correct) {
+      res.send('correct');
+    } else {
+      res.send('incorrect');
+    }
+  })
+});
+
+//Delete questions route
+router.delete('/:id', (req,res)=>{
+  Questions.findByIdAndRemove(req.params.id, (err,deletedQuestion)=>{
+    res.send('deleted');
+  })
+})
 
 module.exports = router;
