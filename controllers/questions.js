@@ -30,8 +30,6 @@ router.get('/random', (req,res)=>{
 
 //Create questions route
 router.post('/', (req,res)=>{
-    console.log('post route');
-    console.log(req.body);
   Questions.create(req.body, (err, createdQuestion)=>{
     res.json(createdQuestion);
   })
