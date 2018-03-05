@@ -2,7 +2,7 @@ const express           = require('express');
 const mongoose          = require('mongoose');
 const bodyParser        = require('body-parser');
 const app               = express();
-const PORT              = 12345;
+const PORT              = 3000;
 
 app.use(bodyParser.json());
 app.use(function (req, res, next) {

@@ -47,6 +47,13 @@ router.put('/check/:id', (req,res)=>{
   })
 });
 
+//Edit route
+router.put('/edit/:id', (req,res)=>{
+  Questions.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err,foundQuestion)=>{
+    res.json(foundQuestion);
+  })
+})
+
 //This route will flag a question for review by admin.  It receives "flagText" from the body of the request, increments the flagNumber of the question and pushes the flagText into the flags array of the question
 router.put('/flag/:id', (req,res)=>{
     console.log('flag route');
