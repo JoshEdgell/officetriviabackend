@@ -5,15 +5,14 @@ const app               = express();
 const PORT              = 3000;
 
 app.use(bodyParser.json());
-app.use(function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, X-Auth-Token, Accept');
-  next()
-})
+app.use(express.static('public'));
 
 const questionsController = require('./controllers/questions.js');
 app.use('/questions', questionsController);
+
+app.get('/', (req,res)=>{
+  res.render(index.html);
+});
 
 mongoose.connect('mongodb://localhost:27017/office');
 mongoose.connection.once('open', ()=>{

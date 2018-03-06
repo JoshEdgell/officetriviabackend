@@ -3,7 +3,7 @@ const Questions           = require('../models/questions.js');
 const router              = express.Router();
 
 //This route sends an array of all question ids ()
-router.get('/', (req,res)=>{
+router.get('/ids', (req,res)=>{
     console.log('index route');
   Questions.find({}, (err,foundQuestions)=>{
     idArray = [];
