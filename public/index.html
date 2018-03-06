@@ -3,15 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>Are You A Superfan?</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
+    <!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- JavaScript -->
     <script src="js/app.js"></script>
+    <!-- Mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body ng-controller="MainController as main">
-
-
-
   <div class="openingModal">
     <h1>Superfan Trivia: Office Edition!</h1>
     <p>Welcome to Superfan Trivia: Office Edition - the web's open-source (American version) Office trivia game!</p>
@@ -59,7 +61,7 @@
             <input type="text" ng-model="main.newQuestion.distractors[2]"></br>
           </div>
         </div>
-        <input type="submit" class="submitNew" value="Create Question"/>
+        <input type="submit" class="submitNew formInput" value="Create Question"/>
       </form>
     </div>
   </div>
