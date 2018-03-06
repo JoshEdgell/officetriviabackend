@@ -19,7 +19,7 @@ small {
   border-radius: 5px;
 }
 .openingModal {
-  position: fixed;
+  /* position: fixed; */
   background-color: rgb(198,198,198);
   width: 80%;
   margin-top: 3em;
