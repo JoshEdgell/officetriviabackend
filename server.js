@@ -2,7 +2,8 @@ const express           = require('express');
 const mongoose          = require('mongoose');
 const bodyParser        = require('body-parser');
 const app               = express();
-const PORT              = 3000;
+const PORT              = process.env.PORT || 3000;
+const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/office';
 
 app.use(bodyParser.json());
 app.use(express.static('public'));
@@ -14,7 +15,7 @@ app.get('/', (req,res)=>{
   res.render(index.html);
 });
 
-mongoose.connect('mongodb://localhost:27017/office');
+mongoose.connect(mongoUri);
 mongoose.connection.once('open', ()=>{
   console.log('Michael Scott, extension ' + PORT);
 })
