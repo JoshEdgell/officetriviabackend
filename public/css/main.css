@@ -19,7 +19,6 @@ small {
   border-radius: 5px;
 }
 .openingModal {
-  /* position: fixed; */
   background-color: rgb(198,198,198);
   width: 80%;
   margin-top: 3em;
@@ -38,7 +37,6 @@ small {
 }
 
 .questionDiv {
-  position: fixed;
   background-color: rgb(198,198,198);
   width: 80%;
   margin-top: 3em;
@@ -49,7 +47,6 @@ small {
 }
 
 .correctAnswer {
-  position: fixed;
   background-color: rgb(198,198,198);
   width: 80%;
   margin-top: 3em;
@@ -59,7 +56,6 @@ small {
   height: 80%;
 }
 .incorrectAnswer {
-  position: fixed;
   background-color: rgb(198,198,198);
   width: 80%;
   margin-top: 3em;
@@ -70,7 +66,6 @@ small {
 }
 
 .writeQuestionsDiv {
-  position: fixed;
   background-color: rgb(198,198,198);
   width: 80%;
   margin-top: 3em;
@@ -105,7 +100,6 @@ small {
 }
 
 .reviewQuestionDiv {
-  position: fixed;
   background-color: rgb(198,198,198);
   width: 80%;
   margin-top: 3em;
