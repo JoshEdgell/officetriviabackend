@@ -2,7 +2,7 @@ const app = angular.module('OfficeTrivia', []);
 
 app.controller('MainController', ['$http', function($http){
   const controller = this;
-  this.url = 'http://localhost:3000/questions/';
+  this.url = 'https://officesuperfantrivia.herokuapp.com/questions/';
   this.currentQuestion = {};
   this.newQuestion = {
     answers: []
@@ -144,5 +144,5 @@ app.controller('MainController', ['$http', function($http){
     }, function(error){
       console.log(error);
     })
-  }
+  };
 }])
